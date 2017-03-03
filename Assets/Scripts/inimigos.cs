@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class INIMIGOS : MonoBehaviour {
+public class inimigos : MonoBehaviour {
 	int count = 0;
 
 	// Use this for initialization
@@ -14,10 +14,30 @@ public class INIMIGOS : MonoBehaviour {
 	void Update () {
 
 
+
+
 		isPrime (count);
 		count++;
 
 	}
+
+	public class Enemy
+	{		
+		private int damage;
+		private int value;
+		private bool isPrimo;
+	
+		public void atk(){
+		}
+
+		public void move (int x,int y){
+		}
+
+		public Enemy(int x , int y , int value) {
+		}
+
+	}
+
 
 	private bool isPrime(int i){
 
