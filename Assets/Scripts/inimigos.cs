@@ -1,40 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AssemblyCSharp;
 
 public class inimigos : MonoBehaviour {
 	int count = 0;
 
+	
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
+	public void teste(){
+
+        System.Random randNum = new System.Random();
+		List<Enemy> enemigos = new List<Enemy> ();
+
+		for (;;) {
+			enemigos.Add (new Enemy (randNum.Next(0,1000),randNum.Next(0,1000),count));
+		}
+
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 
 
 
 
+		um.move
+
 		isPrime (count);
 		count++;
-
-	}
-
-	public class Enemy
-	{		
-		private int damage;
-		private int value;
-		private bool isPrimo;
-	
-		public void atk(){
-		}
-
-		public void move (int x,int y){
-		}
-
-		public Enemy(int x , int y , int value) {
-		}
 
 	}
 
