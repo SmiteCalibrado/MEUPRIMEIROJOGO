@@ -1,12 +1,16 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using AssemblyCSharp;
 
 namespace AssemblyCSharp
 {
-	public class Enemy
+	public class Enemy 
 	{
 		private int damage;
 		private int value;
 		private bool isPrimo;
+		public Vector2 position;
 
 		public void atk(){
 		}
@@ -14,8 +18,11 @@ namespace AssemblyCSharp
 		public void move (int x,int y){
 		}
 
-		public Enemy(int x , int y , int value) {
+		public Enemy(float x , float y , int value) {
+			position = new Vector2 (x, y);
 		}
+
+
 	}
 }
 

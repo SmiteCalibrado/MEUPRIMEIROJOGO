@@ -2,40 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AssemblyCSharp;
+using System;
 
 public class inimigos : MonoBehaviour {
 	int count = 0;
 
-	
+	List<Enemy> enemigos = new List<Enemy> ();
+	System.Random randNum = new System.Random();
+
 	// Use this for initialization
 	void Start () {
-
 	}
 
 	public void teste(){
-
-        System.Random randNum = new System.Random();
-		List<Enemy> enemigos = new List<Enemy> ();
-
-		for (;;) {
-			enemigos.Add (new Enemy (randNum.Next(0,1000),randNum.Next(0,1000),count));
-		}
-
-
+		        	
 	}
 
 	// Update is called once per frame
 	void Update () {
 
+		if(Time.frameCount % 40 == 0){
+			Enemy enemy = new Enemy (randNum.Next (0, Screen.width), 0, count);
+			enemigos.Add (enemy);
 
+			GameObject obj = Instantiate (gameObject) as GameObject;
 
+			SpriteRenderer render = obj.GetComponent<SpriteRenderer> ();
 
-		um.move
+			Sprite number = new Sprite ();
+			render.sprite.texture.LoadImage ((Convert.FromBase64String(PlayerPrefs.GetString("SPRITE PLAYER_0"))));
 
-		isPrime (count);
-		count++;
+			Texture2D tex = render.sprite.texture;
+
+			number = Resources.Load ("SPRITE PLAYER", typeof(Sprite)) as Sprite;
+
+			render.sprite = number;
+			isPrime (count);
+			count++;
+		}
+
 
 	}
+
 
 
 	private bool isPrime(int i){
